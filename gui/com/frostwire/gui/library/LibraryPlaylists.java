@@ -123,7 +123,7 @@ public class LibraryPlaylists extends AbstractLibraryListPanel {
     private List<Playlist> importingPlaylists;
 
     public LibraryPlaylists() {
-        setupUI();
+        //setupUI();
         importingPlaylists = new ArrayList<Playlist>();
     }
 

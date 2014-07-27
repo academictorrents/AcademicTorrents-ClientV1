@@ -59,7 +59,7 @@ public class LibraryLeftPanel extends JPanel {
 
         //Prepare a split pane with explorers
         splitPane.setTopComponent(libraryExplorer);
-        splitPane.setBottomComponent(libraryPlaylists);
+        //splitPane.setBottomComponent(libraryPlaylists);
         splitPane.setAutoscrolls(true);
 
         add(splitPane, BorderLayout.CENTER);
