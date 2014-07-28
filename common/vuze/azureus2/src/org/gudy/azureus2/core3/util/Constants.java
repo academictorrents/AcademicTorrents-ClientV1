@@ -39,14 +39,14 @@ public class
 Constants 
 {
   public static final String EMPTY_STRING = "";
-  public static final String SF_WEB_SITE			= "http://plugins.vuze.com/";
+  public static final String SF_WEB_SITE			= "";
  
-  public static final String AELITIS_TORRENTS		= "http://cf1.vuze.com/torrent/torrents/";
-  public static final String AELITIS_FILES			= "http://cf1.vuze.com/torrent/files/";
-  public static final String AZUREUS_WIKI 			= "http://wiki.vuze.com/w/";
+  public static final String AELITIS_TORRENTS		= "";
+  public static final String AELITIS_FILES			= "";
+  public static final String AZUREUS_WIKI 			= "";
   
-  public static final String  VERSION_SERVER_V4 	= "version.vuze.com";
-  public static final String  VERSION_SERVER_V6 	= "version6.vuze.com";
+  public static final String  VERSION_SERVER_V4 	= "";
+  public static final String  VERSION_SERVER_V6 	= "";
 
   public static final String DHT_SEED_ADDRESS_V4		= "dht.vuze.com";
   public static final String DHT_SEED_ADDRESS_V6		= "dht6.vuze.com";
@@ -60,14 +60,14 @@ Constants
   public static final String PAIRING_URL			= "https://pair.vuze.com/pairing";
 
   
-  public static final String[] AZUREUS_DOMAINS = { "azureusplatform.com", "azureus.com", "aelitis.com", "vuze.com" };
+  public static final String[] AZUREUS_DOMAINS = { "" };
   
   public static final String DEFAULT_ENCODING 	= "UTF8";
   public static final String BYTE_ENCODING 		= "ISO-8859-1";
   public static final Charset	BYTE_CHARSET;
   public static final Charset	DEFAULT_CHARSET;
 
-  public static final int	DEFAULT_INSTANCE_PORT	= 6880;
+  public static final int	DEFAULT_INSTANCE_PORT	= 6803;
   public static final int	INSTANCE_PORT;
   
   static{
@@ -133,13 +133,13 @@ Constants
     //      2.0.8.3_Bnn       // incremental build
   
   public static String APP_NAME = "Vuze";
-  public static final String AZUREUS_NAME	  					= "Azureus";
-  public static final String AZUREUS_PROTOCOL_NAME_PRE_4813	  	= "Azureus";
-  public static final String AZUREUS_PROTOCOL_NAME	  			= "Vuze";
-  public static final String AZUREUS_VERSION  = "5.3.0.1";
+  public static final String AZUREUS_NAME	  					= "ATClient";
+  public static final String AZUREUS_PROTOCOL_NAME_PRE_4813	  	= "ATClient";
+  public static final String AZUREUS_PROTOCOL_NAME	  			= "ATClient";
+  public static final String AZUREUS_VERSION  = "1.0.0.0";
   public static final String BUILD_VERSION  = "@build.version@";   //Ant replace
   public static final String AZUREUS_SUBVER	  = "";
-  public static final byte[] VERSION_ID       = ("-" + "AZ" + "5301" + "-").getBytes();  //MUST be 8 chars long!
+  public static final byte[] VERSION_ID       = ("-" + "ATC" + "001" + "-").getBytes();  //MUST be 8 chars long!
 
   private static final boolean FORCE_NON_CVS = System.getProperty( "az.force.noncvs", "0" ).equals( "1" );
   
