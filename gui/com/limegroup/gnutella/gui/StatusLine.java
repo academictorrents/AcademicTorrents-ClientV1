@@ -93,13 +93,13 @@ public final class StatusLine {
     private JLabel _bandwidthUsageDown;
     private JLabel _bandwidthUsageUp;
 
-    private IconButton _twitterButton;
-    private IconButton _facebookButton;
-    private IconButton _googlePlusButton;
+//    private IconButton _twitterButton;
+//    private IconButton _facebookButton;
+//    private IconButton _googlePlusButton;
 
     private IconButton seedingStatusButton;
 
-    private DonationButtons _donationButtons;
+//    private DonationButtons _donationButtons;
 
     /**
      * Variables for the center portion of the status bar, which can display
@@ -138,8 +138,8 @@ public final class StatusLine {
             }
         });
 
-        GUIMediator.setSplashScreenString(I18n.tr("Creating donation buttons so you can give us a hand..."));
-        createDonationButtonsComponent();
+        //GUIMediator.setSplashScreenString(I18n.tr("Creating donation buttons so you can give us a hand..."));
+        //createDonationButtonsComponent();
 
         //  make icons and panels for connection quality
         GUIMediator.setSplashScreenString(I18n.tr("Creating Connection Quality Indicator..."));
@@ -157,12 +157,12 @@ public final class StatusLine {
         createBandwidthLabel();
 
         // make the social buttons
-        GUIMediator.setSplashScreenString(I18n.tr("Learning to socialize on Facebook..."));
-        createFacebookButton();
-        GUIMediator.setSplashScreenString(I18n.tr("Learning to socialize on Twitter..."));
-        createTwitterButton();
-        GUIMediator.setSplashScreenString(I18n.tr("Learning to socialize on G+..."));
-        createGooglePlusButton();
+//        GUIMediator.setSplashScreenString(I18n.tr("Learning to socialize on Facebook..."));
+//        createFacebookButton();
+//        GUIMediator.setSplashScreenString(I18n.tr("Learning to socialize on Twitter..."));
+//        createTwitterButton();
+//        GUIMediator.setSplashScreenString(I18n.tr("Learning to socialize on G+..."));
+//        createGooglePlusButton();
 
         // male Seeding status label
         GUIMediator.setSplashScreenString(I18n.tr("Painting seeding sign..."));
@@ -180,25 +180,25 @@ public final class StatusLine {
         refresh();
     }
 
-    private void createDonationButtonsComponent() {
-        _donationButtons = new DonationButtons();
-    }
-
-    private void createTwitterButton() {
-        _twitterButton = new IconButton("TWITTER");
-        initSocialButton(_twitterButton, I18n.tr("Follow us @frostwire"), "https://twitter.com/frostwire");
-    }
-
-    private void createFacebookButton() {
-        _facebookButton = new IconButton("FACEBOOK");
-        initSocialButton(_facebookButton, I18n.tr("Like FrostWire on Facebook and stay in touch with the community. Get Help and Help Others."), "https://www.facebook.com/FrostwireOfficial");
-    }
-
-    private void createGooglePlusButton() {
-        _googlePlusButton = new IconButton("GOOGLEPLUS");
-        _googlePlusButton.setPreferredSize(new Dimension(19, 16));
-        initSocialButton(_googlePlusButton, I18n.tr("Circle FrostWire on G+"), "https://plus.google.com/+frostwire/posts");
-    }
+//    private void createDonationButtonsComponent() {
+//        _donationButtons = new DonationButtons();
+//    }
+//
+//    private void createTwitterButton() {
+//        _twitterButton = new IconButton("TWITTER");
+//        initSocialButton(_twitterButton, I18n.tr("Follow us @frostwire"), "https://twitter.com/frostwire");
+//    }
+//
+//    private void createFacebookButton() {
+//        _facebookButton = new IconButton("FACEBOOK");
+//        initSocialButton(_facebookButton, I18n.tr("Like FrostWire on Facebook and stay in touch with the community. Get Help and Help Others."), "https://www.facebook.com/FrostwireOfficial");
+//    }
+//
+//    private void createGooglePlusButton() {
+//        _googlePlusButton = new IconButton("GOOGLEPLUS");
+//        _googlePlusButton.setPreferredSize(new Dimension(19, 16));
+//        initSocialButton(_googlePlusButton, I18n.tr("Circle FrostWire on G+"), "https://plus.google.com/+frostwire/posts");
+//    }
 
     private void initSocialButton(IconButton socialButton, String toolTipText, final String url) {
         socialButton.setToolTipText(I18n.tr(toolTipText));
@@ -253,11 +253,11 @@ public final class StatusLine {
             remainingWidth -= sepWidth;
             remainingWidth -= GUIConstants.SEPARATOR / 2;
 
-            // substract donation buttons as needed2
-            if (_donationButtons != null) {
-                remainingWidth -= _donationButtons.getWidth();
-                remainingWidth -= GUIConstants.SEPARATOR;
-            }
+//            // substract donation buttons as needed2
+//            if (_donationButtons != null) {
+//                remainingWidth -= _donationButtons.getWidth();
+//                remainingWidth -= GUIConstants.SEPARATOR;
+//            }
 
             //  subtract center component
             int indicatorWidth = _centerComponent.getWidth();
@@ -331,9 +331,9 @@ public final class StatusLine {
 
             gbc = new GridBagConstraints();
             gbc.gridx = GridBagConstraints.RELATIVE;
-            BAR.add(_facebookButton, gbc);
-            BAR.add(_twitterButton, gbc);
-            BAR.add(_googlePlusButton, gbc);
+//            BAR.add(_facebookButton, gbc);
+//            BAR.add(_twitterButton, gbc);
+//            BAR.add(_googlePlusButton, gbc);
 
             BAR.add(Box.createHorizontalStrut(GUIConstants.SEPARATOR / 2), gbc);
             //  make center panel stretchy
@@ -343,12 +343,12 @@ public final class StatusLine {
             BAR.add(Box.createHorizontalStrut(GUIConstants.SEPARATOR / 2), gbc);
 
             // donation buttons
-            if (_donationButtons != null && StatusBarSettings.DONATION_BUTTONS_DISPLAY_ENABLED.getValue()) {
-                BAR.add(Box.createHorizontalStrut(GUIConstants.SEPARATOR / 2), gbc);
-                BAR.add(_donationButtons, gbc);
-                BAR.add(Box.createHorizontalStrut(10));
-                BAR.add(Box.createHorizontalStrut(GUIConstants.SEPARATOR), gbc);
-            }
+//            if (_donationButtons != null && StatusBarSettings.DONATION_BUTTONS_DISPLAY_ENABLED.getValue()) {
+//                BAR.add(Box.createHorizontalStrut(GUIConstants.SEPARATOR / 2), gbc);
+//                BAR.add(_donationButtons, gbc);
+//                BAR.add(Box.createHorizontalStrut(10));
+//                BAR.add(Box.createHorizontalStrut(GUIConstants.SEPARATOR), gbc);
+//            }
 
             try {
                 //some macosx versions are throwing a deep NPE when this is invoked all the way down at 
