@@ -116,7 +116,7 @@ public final class ApplicationHeader extends JPanel implements RefreshListener {
 
     public ApplicationHeader(Map<Tabs, Tab> tabs) {
         setMinimumSize(new Dimension(995, 54));
-        setLayout(new MigLayout("insets 0 10px 0 0, ay 50%, filly", "[][][grow][][]"));
+        setLayout(new MigLayout("insets 0 10px 0 0, ay 100%, filly", "[][grow]"));
 
         headerButtonBackgroundSelected = GUIMediator.getThemeImage("selected_header_button_background").getImage();
         headerButtonBackgroundUnselected = GUIMediator.getThemeImage("unselected_header_button_background").getImage();
@@ -144,7 +144,9 @@ public final class ApplicationHeader extends JPanel implements RefreshListener {
 
         
         searchPanels = createSearchPanel();
-        add(searchPanels, "w 240px!, gapright 10px");
+        //added
+        add(searchPanels, "growx, alignx right, east, w 800px!, gapright 10px");
+        //add(searchPanels, "w 240px!, gapright 10px");
 
         //The Chat Tab is not a real Tab, it's a button, it's creation is done inside this method.
         addTabButtons(tabs);
@@ -158,8 +160,8 @@ public final class ApplicationHeader extends JPanel implements RefreshListener {
 
         add(logoUpdateButtonsPanel, "growx, alignx center");
 
-        JComponent player = new MediaPlayerComponent().getMediaPanel();
-        add(player, "dock east, growy, gapright 7px");
+        //JComponent player = new MediaPlayerComponent().getMediaPanel();
+        //add(player, "dock east, growy, gapright 7px");
 
         GUIMediator.addRefreshListener(this);
 
@@ -320,8 +322,8 @@ public final class ApplicationHeader extends JPanel implements RefreshListener {
         }
         
         //CHAT BUTTON
-        createChatButton();
-        buttonContainer.add(chatButton);
+        //createChatButton();
+        //buttonContainer.add(chatButton);
         buttonContainer.add(ThemeMediator.createAppHeaderSeparator(), "growy, w 0px");
 
         add(buttonContainer, "");
@@ -452,6 +454,7 @@ public final class ApplicationHeader extends JPanel implements RefreshListener {
     }
 
     private void showUpdateButton(boolean show) {
+    	//show = true;
         if (updateButton.isVisible() == show) {
             return;
         }
