@@ -137,7 +137,7 @@ public final class MainFrame {
     MainFrame(JFrame frame) {
         //starts the Frostwire update manager, and will trigger a task in 5 seconds.
         // RELEASE
-        com.frostwire.gui.updates.UpdateManager.scheduleUpdateCheckTask(0);
+        //com.frostwire.gui.updates.UpdateManager.scheduleUpdateCheckTask(0);
 
         // DEBUG
         //com.frostwire.gui.updates.UpdateManager.scheduleUpdateCheckTask(0,"http://update1.frostwire.com/example.php");

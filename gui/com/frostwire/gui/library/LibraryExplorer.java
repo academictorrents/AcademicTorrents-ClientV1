@@ -216,13 +216,13 @@ public class LibraryExplorer extends AbstractLibraryListPanel {
 
         addNodesPerMediaType(root);
 
-        root.add(new DirectoryHolderNode(new InternetRadioDirectoryHolder()));
-        root.add(new DirectoryHolderNode(new StarredDirectoryHolder()));
-        root.add(new DirectoryHolderNode(new TorrentDirectoryHolder()));
+       // root.add(new DirectoryHolderNode(new InternetRadioDirectoryHolder()));
+        //root.add(new DirectoryHolderNode(new StarredDirectoryHolder()));
+        //root.add(new DirectoryHolderNode(new TorrentDirectoryHolder()));
         root.add(new DirectoryHolderNode(new SavedFilesDirectoryHolder(SharingSettings.TORRENT_DATA_DIR_SETTING, I18n.tr("Default Save Folder"))));
 
-        devicesNode = new DevicesNode(I18n.tr("Wi-Fi Sharing"));
-        root.add(devicesNode);
+        //devicesNode = new DevicesNode(I18n.tr("Wi-Fi Sharing"));
+        //root.add(devicesNode);
 
         model = new DefaultTreeModel(root);
 
@@ -262,10 +262,10 @@ public class LibraryExplorer extends AbstractLibraryListPanel {
     }
 
     private void addNodesPerMediaType(DefaultMutableTreeNode root) {
-        addNodePerMediaType(root, NamedMediaType.getFromMediaType(MediaType.getAudioMediaType()));
-        addNodePerMediaType(root, NamedMediaType.getFromMediaType(MediaType.getVideoMediaType()));
-        addNodePerMediaType(root, NamedMediaType.getFromMediaType(MediaType.getImageMediaType()));
-        addNodePerMediaType(root, NamedMediaType.getFromMediaType(MediaType.getProgramMediaType()));
+        //addNodePerMediaType(root, NamedMediaType.getFromMediaType(MediaType.getAudioMediaType()));
+        //addNodePerMediaType(root, NamedMediaType.getFromMediaType(MediaType.getVideoMediaType()));
+        //addNodePerMediaType(root, NamedMediaType.getFromMediaType(MediaType.getImageMediaType()));
+        //addNodePerMediaType(root, NamedMediaType.getFromMediaType(MediaType.getProgramMediaType()));
         addNodePerMediaType(root, NamedMediaType.getFromMediaType(MediaType.getDocumentMediaType()));
     }
 
