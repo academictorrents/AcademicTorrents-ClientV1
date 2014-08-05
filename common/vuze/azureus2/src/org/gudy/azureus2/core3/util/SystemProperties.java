@@ -56,7 +56,7 @@ public class SystemProperties {
   private static final 	String OSX_DEFAULT = "Library" + SEP + "Application Support";
   
   
-  private static final boolean PORTABLE = true;//System.getProperty( "azureus.portable.root", "" ).length() > 0;
+  private static final boolean PORTABLE = System.getProperty( "azureus.portable.root", "" ).length() > 0;
 	
   	private static String user_path;
   	private static String app_path;
@@ -64,6 +64,7 @@ public class SystemProperties {
 	public static void
 	determineApplicationName()
 	{
+		System.setProperty( "azureus.app.name","ATDownloader");
 		String explicit_name = System.getProperty( "azureus.app.name", null );
 		
 		if ( explicit_name != null ){

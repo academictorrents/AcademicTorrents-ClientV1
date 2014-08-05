@@ -67,7 +67,7 @@ Constants
   public static final Charset	BYTE_CHARSET;
   public static final Charset	DEFAULT_CHARSET;
 
-  public static final int	DEFAULT_INSTANCE_PORT	= 6803;
+  public static final int	DEFAULT_INSTANCE_PORT	= 6501;
   public static final int	INSTANCE_PORT;
   
   static{
@@ -132,7 +132,7 @@ Constants
     //      2.0.8.3_CVS
     //      2.0.8.3_Bnn       // incremental build
   
-  public static String APP_NAME = "Vuze";
+  public static String APP_NAME = "ATClient";
   public static final String AZUREUS_NAME	  					= "ATClient";
   public static final String AZUREUS_PROTOCOL_NAME_PRE_4813	  	= "ATClient";
   public static final String AZUREUS_PROTOCOL_NAME	  			= "ATClient";
