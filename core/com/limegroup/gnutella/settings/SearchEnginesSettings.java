@@ -58,4 +58,6 @@ public class SearchEnginesSettings extends LimeProps {
     public static final BooleanSetting TORRENTS_SEARCH_ENABLED = FACTORY.createBooleanSetting("TORRENTS_SEARCH_ENABLED", true);
     
     public static final BooleanSetting YIFY_SEARCH_ENABLED = FACTORY.createBooleanSetting("YIFY_SEARCH_ENABLED", true);
+    
+    public static final BooleanSetting ACADEMICTORRENTS_SEARCH_ENABLED = FACTORY.createBooleanSetting("ACADEMICTORRENTS_SEARCH_ENABLED", true);    
 }

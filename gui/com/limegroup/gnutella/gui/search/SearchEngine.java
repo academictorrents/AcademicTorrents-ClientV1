@@ -24,6 +24,7 @@ import java.util.List;
 import org.limewire.setting.BooleanSetting;
 
 import com.frostwire.search.SearchPerformer;
+import com.frostwire.search.academictorrents.AcademicTorrentsSearchPerformer;
 import com.frostwire.search.archiveorg.ArchiveorgSearchPerformer;
 import com.frostwire.search.bitsnoop.BitSnoopSearchPerformer;
 import com.frostwire.search.domainalias.DomainAliasManager;
@@ -75,6 +76,7 @@ public abstract class SearchEngine {
     public static final int EZTV_ID = 15;
     public static final int TORRENTS_ID = 16;
     public static final int YIFI_ID = 17;
+    public static final int ACADEMICTORRENTS_ID = 18;
     
     public static final DomainAliasManagerBroker DOMAIN_ALIAS_MANAGER_BROKER = new DomainAliasManagerBroker();
 
@@ -131,6 +133,13 @@ public abstract class SearchEngine {
         @Override
         public SearchPerformer getPerformer(long token, String keywords) {
             return new ArchiveorgSearchPerformer(SearchEngine.ARCHIVEORG.getDomainAliasManager(),token, keywords, DEFAULT_TIMEOUT);
+        }
+    };
+    
+    public static final SearchEngine ACADEMICTORRENTS = new SearchEngine(ACADEMICTORRENTS_ID, "AcademicTorrents.com", SearchEnginesSettings.ACADEMICTORRENTS_SEARCH_ENABLED, DOMAIN_ALIAS_MANAGER_BROKER.getDomainAliasManager("acacdemictorrents.com")) {
+        @Override
+        public SearchPerformer getPerformer(long token, String keywords) {
+            return new AcademicTorrentsSearchPerformer(SearchEngine.ACADEMICTORRENTS.getDomainAliasManager(),token, keywords, DEFAULT_TIMEOUT);
         }
     };
 
@@ -212,7 +221,11 @@ public abstract class SearchEngine {
     }
 
     public static List<SearchEngine> getEngines() {
-        return Arrays.asList(TORRENTS, EXTRATORRENT, BITSNOOP, SOUNDCLOUD, YOUTUBE, FROSTCLICK, MININOVA, KAT, TPB, MONOVA, ARCHIVEORG, TORLOCK, EZTV, YIFY);
+        //return Arrays.asList(TORRENTS, EXTRATORRENT, BITSNOOP, SOUNDCLOUD, YOUTUBE, FROSTCLICK, MININOVA, KAT, TPB, MONOVA, ARCHIVEORG, TORLOCK, EZTV, YIFY);
+
+    	return Arrays.asList(YOUTUBE, ACADEMICTORRENTS);
+    	   
+    
     }
 
     public abstract SearchPerformer getPerformer(long token, String keywords);
