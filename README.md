@@ -1,10 +1,3 @@
-![alt text](http://biz.prlog.org/frostwire/logo.png "Frostwire")
-
-
-Hi there FrostWire Hacker
-
--------------------
-
 
 
 FrostWire is a file sharing client and media management tool that was made using
