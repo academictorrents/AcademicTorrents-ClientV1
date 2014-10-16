@@ -35,8 +35,14 @@ public class SharingSettings extends LimeProps {
 
     public static final File DEFAULT_TORRENTS_DIR = new File((PORTABLE_ROOT_FOLDER == null) ? FrostWireUtils.getFrostWireRootFolder() : PORTABLE_ROOT_FOLDER, "Torrents");
 
+    public static final File DEFAULT_ATEXPORTTORRENT_DIR = new File((PORTABLE_ROOT_FOLDER == null) ? FrostWireUtils.getFrostWireRootFolder() : PORTABLE_ROOT_FOLDER, "atexport/entries");
+
+    
     public static final FileSetting TORRENTS_DIR_SETTING = FACTORY.createFileSetting("TORRENTS_DIR_SETTING", DEFAULT_TORRENTS_DIR).setAlwaysSave(true);
 
+    public static final FileSetting ATTORRENTS_DIR_SETTING = FACTORY.createFileSetting("ATTORRENTS_DIR_SETTING", DEFAULT_ATEXPORTTORRENT_DIR).setAlwaysSave(true);
+
+    
     /**
      * The default folder where Torrent Data will be saved. This folder CANNOT BE SHARED
      * to avoid sharing inconsistencies. 

@@ -32,6 +32,7 @@ public class MediaType implements Serializable {
     public static final String SCHEMA_ANY_TYPE = "*";
     public static final String SCHEMA_CUSTOM = "custom";
     public static final String SCHEMA_DOCUMENTS = "document";
+    public static final String SCHEMA_PDFDOCUMENTS = "pdf";
     public static final String SCHEMA_PROGRAMS = "application";
     public static final String SCHEMA_AUDIO = "audio";
     public static final String SCHEMA_VIDEO = "video";
@@ -42,7 +43,8 @@ public class MediaType implements Serializable {
     // These are used as resource keys to retreive descriptions in the GUI 
     public static final String ANY_TYPE = I18nMarker.marktr("All Types");
     
-    public static final String DOCUMENTS = I18nMarker.marktr("Books/Docs");
+    public static final String DOCUMENTS = I18nMarker.marktr("Documents");
+    public static final String PDFDOCUMENTS = I18nMarker.marktr("Pdfs");
     public static final String PROGRAMS = I18nMarker.marktr("Programs");
     public static final String AUDIO = I18nMarker.marktr("Audio");
     public static final String VIDEO = I18nMarker.marktr("Video");
@@ -86,7 +88,18 @@ public class MediaType implements Serializable {
                 "opf","pdg","pdb","tr2","tr3","cbr","cbz","cb7",
                 "cbt","cba","docx"
             });
-            
+          
+
+    /**
+     * Type for 'documents'
+     */
+    private static final MediaType TYPE_PDFDOCUMENTS =
+        new MediaType(SCHEMA_PDFDOCUMENTS, PDFDOCUMENTS,
+            new String[] {
+                "pdf", "rtf", "doc","docx"
+            });
+    
+    
     /**
      * Type for linux/osx programs, used for Aggregator.
      */
@@ -185,7 +198,7 @@ public class MediaType implements Serializable {
      * All media types.
      */
     private static final MediaType[] ALL_MEDIA_TYPES =
-        new MediaType[] { TYPE_AUDIO, TYPE_DOCUMENTS,TYPE_IMAGES, TYPE_PROGRAMS, TYPE_TORRENTS, TYPE_VIDEO, TYPE_ANY };     
+        new MediaType[] { TYPE_AUDIO, TYPE_DOCUMENTS, TYPE_PDFDOCUMENTS,TYPE_IMAGES, TYPE_PROGRAMS, TYPE_TORRENTS, TYPE_VIDEO, TYPE_ANY };     
     
     /**
      * The description of this MediaType.
@@ -350,6 +363,13 @@ public class MediaType implements Serializable {
      */
     public static MediaType getDocumentMediaType() {
         return TYPE_DOCUMENTS;
+    }
+    
+    /**
+     * Retrieves the document media type.
+     */
+    public static MediaType getPdfDocumentMediaType() {
+        return TYPE_PDFDOCUMENTS;
     }
     
     /**

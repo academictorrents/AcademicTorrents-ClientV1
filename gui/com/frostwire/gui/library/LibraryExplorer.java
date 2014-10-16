@@ -173,6 +173,9 @@ public class LibraryExplorer extends AbstractLibraryListPanel {
         else if (directoryHolder instanceof TorrentDirectoryHolder) {
             LibraryMediator.instance().updateTableFiles(directoryHolder);
         }
+        else if (directoryHolder instanceof ATTorrentDirectoryHolder) {
+            LibraryMediator.instance().updateTableFiles(directoryHolder);
+        }
         //SAVED FILES FOLDER
         else if (directoryHolder instanceof SavedFilesDirectoryHolder) {
             if (clearCache) {
@@ -216,13 +219,19 @@ public class LibraryExplorer extends AbstractLibraryListPanel {
 
         addNodesPerMediaType(root);
 
-       // root.add(new DirectoryHolderNode(new InternetRadioDirectoryHolder()));
+        //root.add(new DirectoryHolderNode(new InternetRadioDirectoryHolder()));
         //root.add(new DirectoryHolderNode(new StarredDirectoryHolder()));
-        //root.add(new DirectoryHolderNode(new TorrentDirectoryHolder()));
+        root.add(new DirectoryHolderNode(new TorrentDirectoryHolder()));
         root.add(new DirectoryHolderNode(new SavedFilesDirectoryHolder(SharingSettings.TORRENT_DATA_DIR_SETTING, I18n.tr("Default Save Folder"))));
-
-        //devicesNode = new DevicesNode(I18n.tr("Wi-Fi Sharing"));
-        //root.add(devicesNode);
+        
+        //root.add(new DirectoryHolderNode(new SavedFilesDirectoryHolder(SharingSettings.TORRENT_DATA_DIR_SETTING, I18n.tr("AT"))));
+        
+        root.add(new DirectoryHolderNode(new ATTorrentDirectoryHolder()));
+        
+//        devicesNode = new DevicesNode(I18n.tr("Wi-Fi Sharing"));
+//        root.add(devicesNode);
+//        
+//        root.add(new DirectoryHolderNode(new CollectionsDirectoryHolder()));
 
         model = new DefaultTreeModel(root);
 
@@ -243,7 +252,7 @@ public class LibraryExplorer extends AbstractLibraryListPanel {
         SkinPopupMenu popup = new SkinPopupMenu();
         popup.add(new SkinMenuItem(refreshAction));
         popup.add(new SkinMenuItem(exploreAction));
-        popup.add(new SkinMenuItem(new ConfigureOptionsAction(OptionsConstructor.SHARED_KEY, I18n.tr("Configure Options"), I18n.tr("You can configure the FrostWire\'s Options."))));
+        popup.add(new SkinMenuItem(new ConfigureOptionsAction(OptionsConstructor.SHARED_KEY, I18n.tr("Configure Options"), I18n.tr("You can configure Options."))));
         tree.addMouseListener(new DefaultMouseListener(new TreeMouseObserver(tree, popup)));
 
         tree.addKeyListener(new KeyAdapter() {
@@ -267,6 +276,7 @@ public class LibraryExplorer extends AbstractLibraryListPanel {
         //addNodePerMediaType(root, NamedMediaType.getFromMediaType(MediaType.getImageMediaType()));
         //addNodePerMediaType(root, NamedMediaType.getFromMediaType(MediaType.getProgramMediaType()));
         addNodePerMediaType(root, NamedMediaType.getFromMediaType(MediaType.getDocumentMediaType()));
+        addNodePerMediaType(root, NamedMediaType.getFromMediaType(MediaType.getPdfDocumentMediaType()));
     }
 
     private void addNodePerMediaType(DefaultMutableTreeNode root, NamedMediaType nm) {

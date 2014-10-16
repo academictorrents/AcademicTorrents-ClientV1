@@ -72,7 +72,8 @@ done
 export CLASSPATH
 echo $CLASSPATH
 
-export JAVA_BIN=${JAVA_HOME}/bin/java
+#export JAVA_BIN=${JAVA_HOME}/bin/java
+export JAVA_BIN=java
 
 echo Java Home:
 echo ${JAVA_HOME}
@@ -85,7 +86,7 @@ echo "Let's go!"
 
 case ${PLATFORM} in
     Darwin)
-        ${JAVA_BIN} ${OPTS} -Xdock:name="FrostWire GIT" -Ddebug=1 com.limegroup.gnutella.gui.Main $* ;;
+        ${JAVA_BIN} ${OPTS} -Xdock:name="ATClient V1" -Ddebug=1 com.limegroup.gnutella.gui.Main $* ;;
     *)
         ${JAVA_BIN} ${OPTS} -Ddebug=1 com.limegroup.gnutella.gui.Main $* ;;
 esac
